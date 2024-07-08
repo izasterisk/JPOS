@@ -1,0 +1,8 @@
+# Prettier will also follow rules specified in the ".gitignore" by default.
+# Ignore build and coverage directories:
+coverage
+build
+dist
+node_modules
+.husky
+public
