@@ -1,0 +1,235 @@
+[
+    {
+        "id": "6d17e4e266b6f154",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1d4089a15ecc5f28",
+        "type": "http in",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "url": "order/create",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "e4d0a6a06b229c05"
+            ]
+        ]
+    },
+    {
+        "id": "e4d0a6a06b229c05",
+        "type": "function",
+        "z": "6d17e4e266b6f154",
+        "name": "function 2",
+        "func": "msg.payload = {\n  message: \"Create Order Success\",\n  result: true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 200,
+        "wires": [
+            [
+                "d4c7ccfa5fd75111"
+            ]
+        ]
+    },
+    {
+        "id": "d4c7ccfa5fd75111",
+        "type": "http response",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "37adbe00cea7857c",
+        "type": "http in",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "url": "order/all",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "1003488baa71d1e9"
+            ]
+        ]
+    },
+    {
+        "id": "1003488baa71d1e9",
+        "type": "function",
+        "z": "6d17e4e266b6f154",
+        "name": "function 6",
+        "func": "msg.payload = {\n  message: \"Get all Contact Success\",\n  result: [\n    {\n      id: 1,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"STAFF001\",\n      status: \"ACCEPTED\",\n    },\n    {\n      id: 2,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"\",\n      status: \"PENDING\",\n    },\n    {\n      id: 3,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"STAFF002\",\n      status: \"REJECTED\",\n    },\n    {\n      id: 4,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"\",\n      status: \"PENDING\",\n    },\n    {\n      id: 5,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"\",\n      status: \"PENDING\",\n    }, \n    {\n      id: 6,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"STAFF001\",\n      status: \"PROCESSING\",\n    },\n    {\n      id: 7,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"\",\n      status: \"ACCEPTED\",\n    },\n    {\n      id: 8,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"STAFF002\",\n      status: \"REJECTED\",\n    },\n    {\n      id: 9,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"\",\n      status: \"PROCESSING\",\n    },\n    {\n      id: 10,\n      name: \"Trác Kiến Phú\",\n      email: \"ahihi@gmail.com\",\n      phone_number: \"0123456789\",\n      message: \"Hello\",\n      assigned_to: \"\",\n      status: \"ACCEPTED\",\n    },\n  ]\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "553290ebd6de3d6c"
+            ]
+        ]
+    },
+    {
+        "id": "553290ebd6de3d6c",
+        "type": "http response",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "621b7c3bf202d579",
+        "type": "http in",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "url": "/v1/authen/login",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "7c6b336d719d8703"
+            ]
+        ]
+    },
+    {
+        "id": "7c6b336d719d8703",
+        "type": "function",
+        "z": "6d17e4e266b6f154",
+        "name": "function 7",
+        "func": "let user_role \n\nnode.log(msg.payload.email);\nnode.log(msg.payload.password);\n\nif (msg.payload == null) {\n  msg.payload = {\n    message: \"Wrong email or password\"\n  }\n  return msg\n}\n\nif (msg.payload.email === 'admin@jpos.com' && msg.payload.password === 'a123') {\n  msg.payload = {\n    message: \"Login Success\",\n    role: \"admin\",\n    user_id: \"123\"\n  }\n  return msg\n}\n\nif (msg.payload.email === 'sale@jpos.com' && msg.payload.password === 'a123') {\n  msg.payload = {\n    message: \"Login Success\",\n    role: \"sale\",\n    user_id: \"124\"\n  }\n  return msg\n}\n\nif (msg.payload.email == \"productstaff@jpos.com\" && msg.payload.password == 'a123') {\n  msg.payload = {\n    message: \"Login Success\",\n    role: \"product-staff\",\n    user_id: \"125\"\n  }\n  return msg\n}\n\n// USER IS HERE\nmsg.payload = {\n  message: \"Login Success\",\n  role: \"user\",\n  user_id: \"120\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.log(\"info\");",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 60,
+        "wires": [
+            [
+                "ec22351542f07765"
+            ]
+        ]
+    },
+    {
+        "id": "ec22351542f07765",
+        "type": "http response",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "54617e62e1157e13",
+        "type": "http in",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "url": "/v1/user/:user_id",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 900,
+        "y": 200,
+        "wires": [
+            [
+                "2c333d6d5d372053"
+            ]
+        ]
+    },
+    {
+        "id": "2c333d6d5d372053",
+        "type": "function",
+        "z": "6d17e4e266b6f154",
+        "name": "function 8",
+        "func": "msg.req.params\nnode.log(msg.req.params);\n\nif (msg.req.params.user_id == 3000) {\n  msg.statusCode = 400;\n  msg.payload = {\n    \"message\": \"User not exsits\"\n  }\n  return msg\n}\n\nif (msg.req.params.user_id != null) {\n  msg.payload = {\n    \"message\": \"Delete user succesfuly \"\n  }\n  return msg\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.log(\"info\");",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 200,
+        "wires": [
+            [
+                "7ceb133117b5671c"
+            ]
+        ]
+    },
+    {
+        "id": "7ceb133117b5671c",
+        "type": "http response",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1250,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "35555d8167835a2a",
+        "type": "comment",
+        "z": "6d17e4e266b6f154",
+        "name": "USER",
+        "info": "",
+        "x": 990,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "62b102f599abeea2",
+        "type": "switch",
+        "z": "6d17e4e266b6f154",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1050,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    }
+]
